@@ -1,0 +1,238 @@
+.anuncio {
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+/* Reset de márgenes y padding */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Espaciado del contenido debajo del header */
+.content {
+    margin-top: 80px;
+    /* Ajustar según la altura del header */
+    padding: 20px;
+}
+
+/* Estilizar la navbar */
+.navbar {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+}
+
+/* Centrar los elementos del menú */
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Espaciado de los enlaces */
+.navbar-nav .nav-item {
+    margin: 0 15px;
+}
+
+/* Estilizar los enlaces del menú */
+.navbar-nav .nav-link {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    transition: color 0.3s ease;
+    margin-bottom: auto;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #007bff;
+}
+
+.carousel-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    /* Tamaño del texto */
+    font-weight: bold;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    background-color: #ffffff;
+    /* Color de fondo */
+}
+
+.container-custom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    /* Ocupa toda la pantalla */
+
+}
+
+.row-custom {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 columnas */
+    grid-gap: 50px;
+    /* Espaciado entre tarjetas */
+    text-align: center;
+}
+
+.card {
+    width: 100%;
+    max-width: auto;
+    /* Tamaño máximo de las tarjetas */
+    margin: auto;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+
+}
+
+.card-title {
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.btn-primary {
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.footer {
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    left: 0;
+}
+
+.table-container {
+    width: 60%;
+    /* La tabla solo ocupa la mitad del ancho */
+    margin: auto;
+    /* Centra la tabla */
+    max-height: 400px;
+    /* Altura máxima antes de activar el scroll */
+    overflow-y: auto;
+    /* Scroll vertical si hay muchas filas */
+    border-radius: 10px;
+    /* Bordes redondeados */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    /* Sombra para mejor diseño */
+}
+
+.table {
+    width: 100%;
+    /* Asegura que la tabla no se expanda más de su contenedor */
+    border-collapse: collapse;
+}
+
+.table thead {
+    position: sticky;
+    top: 0;
+    background: #343a40;
+    /* Encabezado fijo con color oscuro */
+    color: white;
+    z-index: 10;
+}
+
+.table th,
+.table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #444;
+    white-space: nowrap;
+    /* Evita saltos de línea */
+    overflow: hidden;
+    /* Oculta el exceso de texto */
+    text-overflow: ellipsis;
+    /* Muestra "..." si el texto es muy largo */
+    max-width: 150px;
+    /* Ajusta según necesites */
+}
+
+/* Específicamente para la columna de correos */
+.table td:first-child {
+    max-width: 200px;
+    /* Ajustá el ancho según necesites */
+}
+
+.tablaRubros {
+    color: #4f4f4f;
+    border-collapse: collapse;
+    width: fit-content;
+    float: left;
+    border: 2px solid #666;
+    margin: 20px;
+    /* Espaciado respecto a otros elementos */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    /* Sombra ligera */
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.tablaRubros th,
+.tablaRubros td {
+    padding: 12px 15px;
+    border: 1px solid #666;
+    text-align: left;
+}
+
+.tablaRubros thead {
+    background-color: #343a40;
+    color: white;
+    font-weight: bold;
+}
+
+.tablaRubros tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+    /* Color alterno para filas */
+}
+
+.tablaRubros tbody tr:hover {
+    background-color: #d1e7fd;
+    /* Resalta al pasar el mouse */
+}
+
+.tablaRubros th {
+    text-align: left;
+}
+
+/* Campos de entrada */
+.form-control,
+.form-select {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease-in-out;
+}
+
+
+
+/* Checkbox */
+.form-check-input {
+    transform: scale(1.2);
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+/* Espaciado entre filas */
+.row .col-md-2,
+.row .col-md-6,
+.row .col-md-4 {
+    padding-bottom: 10px;
+}
+
+/* Centrar el botón */
+.col-12 {
+    display: flex;
+    justify-content: center;
+  }
+
+.btn-primary {
+    width: 50%;
+    /* Ajusta el tamaño a la mitad del formulario */
+    max-width: 160px;
+    /* Evita que se haga demasiado grande */
+}
