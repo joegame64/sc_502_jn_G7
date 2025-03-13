@@ -1,6 +1,36 @@
-.anuncio {
+.materia {
     font-weight: bold;
-    margin-bottom: 25px;
+    font-size: 18px;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.horario {
+    font-style: italic;
+    font-size: 16px;
+    color: #16a085;
+    margin-bottom: 5px;
+}
+
+.sede {
+    font-size: 16px;
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.anuncio {
+    font-size: 20px;
+    font-weight: bold;
+    color: #34495e;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #3498db;
+    display: inline; /* Permite que la línea se ajuste al texto */
+    padding-bottom: 5px;
+    text-align: left;
+    width: max-content; 
+    display: flex;
+    justify-content: flex-start; 
 }
 
 /* Reset de márgenes y padding */
@@ -236,3 +266,20 @@ body {
     max-width: 160px;
     /* Evita que se haga demasiado grande */
 }
+
+.btnbtn-primaryEnviar{
+    margin-bottom: 25px;
+}
+
+.top-right {
+    position: absolute;
+    top: 10vh;  /* Ajusta la distancia desde la parte superior */
+    right: 20px; /* Ajusta la distancia desde la derecha */
+    text-align: left;
+
+    padding: 5px 10px;
+
+    
+}
+
+
