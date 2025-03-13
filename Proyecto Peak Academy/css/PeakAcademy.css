@@ -283,3 +283,99 @@ body {
 }
 
 
+
+.titulo {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.form-container {
+    width: 50%;
+    margin: 0 auto; /* Centra el formulario */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn-enviar {
+    width: 10%; /* El botón ocupará la mitad del ancho del formulario */
+    display: block; /* Para centrarlo */
+    margin: 0 auto; /* Centrado */
+    padding: 10px;
+    border: none;
+    background: #245518;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-bottom: 10vh;
+}
+
+.btn-enviar:hover {
+    background: #0f0f0f;
+}
+
+
+h2 {
+    text-align: center;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+.form-control {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.btn-enviar {
+    width: auto;
+    padding: 10px 20px;
+    border: none;
+    background: #315827;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    display: block;
+    margin: 0 auto;
+}
+.btn-enviar:hover {
+    background: #0056b3;
+}
+.practicas {
+    margin-top: 20px;
+}
+.practica {
+    background: #e3e3e3;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+

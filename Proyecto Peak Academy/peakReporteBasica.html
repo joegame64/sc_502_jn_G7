@@ -60,10 +60,10 @@
                     <div>¡Bienvenidos a nuestra plataforma!</div>
                 </div>
                 <div class="carousel-item">
-                    <div>Accede, Modifica las notas de tus Estudiantes</div>
+                    <div>Reporta, Advierte y habla con Los Padres de Familia</div>
                 </div>
                 <div class="carousel-item">
-                    <div>Descubre nuevas Actividades y Practicas para tus clases 💡</div>
+                    <div>Mantenlos al tanto de todo lo que pasa 💡</div>
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#textCarousel" data-bs-slide="prev">
@@ -77,37 +77,16 @@
 
     <!--Tabla de info general -->    
     <div class="top-right">
-        <p class="materia">Programación Básica</p>
+        <p class="materia">Programacion Basica</p>
         <p class="horario">L 8-11 AM</p>
         <p class="sede">Heredia</p>
     </div>
-    
-
+   
     <!--Tabla de notas -->
-    <h5 class="anuncio text-start">Notas de los Estudiantes</h5>
+    <h5 class="anuncio">Estudiantes</h5>
 
     <hr>
 
-    <!--Rubros -->
-    <h5 class="anuncio">Rubros de Evaluación</h5>
-    <table class="tablaRubros" style="color: #4f4f4f; border-color: #666; width: fit-content; float: left;">
-        <thead>
-            <tr>
-                <th scope="col">Actividad</th>
-                <th scope="col">Cantidad</th>
-                <th scope="col">Peso Individual</th>
-                <th scope="col">Peso Total</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr><th scope="row">Tareas</th><td>2</td><td>10%</td><td>20%</td>
-            <tr><th scope="row">Examen</th><td>1</td><td>30%</td><td>30%</td>
-            <tr><th scope="row">Proyecto</th><td>3 Entregables</td><td>16.67%</td><td>50%</td> 
-            <tr><th scope="row">Total</th><td>-</td><td>-</td><td>100%</td>   
-        </tbody>
-    </table>
-    
-    
 
     <!--Tabla de notas -->
     <div class="table-container">
@@ -163,48 +142,47 @@
                 <tr><th scope="row">33</th><td>estudiante33@ufide.ac.cr</td><td>34567033</td><td>Amanda</td><td>Delgado</td><td>19</td><td>Programación Básica</td><td>Limón</td><td>-</td><td>-</td><td>-</td></tr>
                 <tr><th scope="row">34</th><td>estudiante34@ufide.ac.cr</td><td>45678034</td><td>Esteban</td><td>Fonseca</td><td>21</td><td>Programación Básica</td><td>Puntarenas</td><td>-</td><td>-</td><td>-</td></tr>
                 <tr><th scope="row">35</th><td>estudiante35@ufide.ac.cr</td><td>56789035</td><td>Daniela</td><td>Gutiérrez</td><td>20</td><td>Programación Básica</td><td>Guanacaste</td><td>-</td><td>-</td><td>-</td></tr>
-                
-                
-            </tbody>
+                </tbody>
         </table>
     </div>
       <!--Formulario para editar tabla -->
-        <h5 class="anuncio">Editar Campos</h5>
+        <h5 class="anuncio" style="margin-top: 8vh;">Buscar Estudiante</h5>
 
         <hr>
 
         <form class="row g-3">
             <div class="col-md-6">
-            <label for="inputname" class="form-label">Nombre</label>
+                <label for="inputid" class="form-label">Cedula</label>
+                <input type="id" class="form-control" id="inputid" placeholder="Cedula del Estudiante">
+                </div>
+            <div class="col-md-6">
+            <label for="inputname" class="form-label">Nombre Completo</label>
             <input type="name" class="form-control" id="inputname" placeholder="Nombre del Estudiante">
             </div>
-            <div class="col-md-6">
-            <label for="inputid" class="form-label">Cedula</label>
-            <input type="id" class="form-control" id="inputid" placeholder="Cedula del Estudiante">
+            <div class="col-md-2">
+                <label for="inputCorreo" class="form-label">Correo Estudiantil</label>
+                <input type="text" class="form-control" id="inputCorreo" placeholder="" >
             </div>
             <div class="col-md-2">
-                <label for="inputTarea1" class="form-label">Tarea 1</label>
-                <input type="text" class="form-control" id="inputTarea1" placeholder="Ingrese la nota de la Tarea 1" >
+                <label for="inputCarrera" class="form-label">Carrera</label>
+                <input type="text" class="form-control" id="inputCarrera" placeholder="" >
             </div>
             <div class="col-md-2">
-                <label for="inputTarea2" class="form-label">Tarea 2</label>
-                <input type="text" class="form-control" id="inputTarea2" placeholder="Ingrese la nota de la Tarea 1" >
+                <label for="inputResidencia" class="form-label">Lugar de Residencia</label>
+                <input type="text" class="form-control" id="inputResidencia" placeholder="" >
             </div>
             <div class="col-md-2">
-                <label for="inputExamen" class="form-label">Examen</label>
-                <input type="text" class="form-control" id="inputExamen" placeholder="Ingrese la nota del examen" >
-            </div>
-            <div class="col-md-2">
-                <label for="inputProyecto" class="form-label">Proyecto</label>
-                <input type="text" class="form-control" id="inputProyecto" placeholder="Ingrese la nota final del Proyecto" >
+                <label for="inputProyecto" class="form-label">Observaciones</label>
+                <input type="text" class="form-control" id="inputProyecto" placeholder="Describa el Reporte" >
             </div>
             <div class="col-md-4">
-            <label for="inputState" class="form-label">Sede</label>
+            <label for="inputState" class="form-label">Reporte</label>
             <select id="inputState" class="form-select">
                 <option selected>Escoja...</option>
-                <option><p>Heredia</p></option>
-                <option><p>San Pedro</p></option>
-                <option><p>Virtual</p></option>
+                <option><p>Conducta</p></option>
+                <option><p>Ausencias</p></option>
+                <option><p>Notas</p></option>
+                <option><p>Cancelacion de Curso</p></option>
             </select>
             </div>
 
@@ -212,7 +190,7 @@
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="gridCheck">
                 <label class="form-check-label" for="gridCheck">
-                Cargar notas 
+                Enviar Reporte
                 </label>
             </div>
             </div>
@@ -221,7 +199,7 @@
             </div>
 
           <hr>
-          
+
         </form>
     
     <!--footer de la pagina -->
