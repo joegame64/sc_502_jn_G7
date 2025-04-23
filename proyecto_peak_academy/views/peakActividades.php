@@ -1,78 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php include '../core/header.php'; ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peak Academy</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/PeakAcademy.css">
-</head>
+<h5 class="anuncio">Prácticas para los estudiantes</h5>
+<hr>
 
-<body>
-    <!-- Header de la página -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <div class="container-fluid">
-            <!-- Logo -->
-            <a class="logo" href="PeakAcademy.html">
-                <img src="imagenes/peaklogoo.png" alt="Peak Academy Logo" width="150" height="75">
-            </a>
-
-            <!-- Menú de navegación -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="PeakAcademy.html">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="peakPracticas.html">Practicas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="peakNotas.html">Notas</a>
-                    </li>
-                </ul>
-
-                <!-- Dropdown de acciones -->
-                <div class="btn-group">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                        Más Acciones
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="peakReportes.html">Reportes</a></li>
-                        <li><a class="dropdown-item" href="peakMatricula.html">Matricular</a></li>
-                        <li><a class="dropdown-item" href="peakActividades.html">Eventos</a></li>
-                    </ul>
-                </div>
-            </div>
+<!--Prácticas-->
+<div class="container">
+    <h2>Gestión de Prácticas</h2>
+    <form id="formPractica">
+        <div class="form-group">
+            <label for="titulo">Título de la práctica</label>
+            <input type="text" id="titulo" class="form-control" required>
         </div>
-    </nav>
 
-    <!--contenido de la pagina -->
-    <div class="content">
-        <div id="textCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div>¡Bienvenidos a nuestra plataforma!</div>
-                </div>
-                <div class="carousel-item">
-                    <div>Observa las actividades del curso</div>
-                </div>
-                <div class="carousel-item">
-                    <div> Programa tus actividades 💡</div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#textCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#textCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </button>
+        <div class="form-group">
+            <label for="materia">Materia</label>
+            <select id="materia" class="form-control">
+                <option value="">Selecciona una materia</option>
+                <option value="programacion_basica">Programación Básica</option>
+                <option value="redes">Redes 1</option>
+                <option value="ambiente_web">Ambiente Web</option>
+                <option value="diseno">Diseño Gráfico</option>
+                <option value="estructura_datos">Estructura de Datos</option>
+                <option value="testing">Testing</option>
+                <option value="so">Sistemas Operativos</option>
+            </select>
         </div>
+
+        <div class="form-group">
+            <label for="duracion">Duración</label>
+            <select id="duracion" class="form-control">
+                <option value="">Selecciona una duración</option>
+                <option value="15min">15 Min</option>
+                <option value="30min">30 Min</option>
+                <option value="1h">1 Hora</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="modalidad">Modalidad</label>
+            <select id="modalidad" class="form-control">
+                <option value="">Selecciona una modalidad</option>
+                <option value="individual">Individual</option>
+                <option value="grupal">Grupal</option>
+                <option value="parejas">Parejas</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="descripcion">Descripción</label>
+            <textarea id="descripcion" class="form-control" required></textarea>
+        </div>
+
+        <button type="submit" class="btn-enviar">Agregar Práctica</button>
+    </form>
+
+    <div class="practicas">
+        <h3>Prácticas Disponibles</h3>
+        <div id="listaPracticas"></div>
     </div>
+</div>
 
     <!--Pequeño anuncio -->
 
@@ -127,68 +113,4 @@
     </div>
 
     <!--footer de la pagina -->
-    <div class="footer">
-
-        <footer style="background-color: rgb(226, 226, 226);">
-            <div class="container p-4">
-                <div class="row">
-                    <div class="col-lg-6 col-md-12 mb-4">
-                        <h5 class="mb-3" style="letter-spacing: 2px; color: #818963;">Peak Academy</h5>
-                        <p>
-                            Somos una Pagina que ayuda a los docentes a gestionar las
-                            Notas, Reportes, Matriculas de los Docentes y Estudiantes
-
-                        </p>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <h5 class="mb-3" style="letter-spacing: 2px; color: #818963;">links</h5>
-                        <ul class="list-unstyled mb-0">
-                            <li class="mb-1">
-                                <a href="#!" style="color: #4f4f4f;">Preguntas Frecuentes</a>
-                            </li>
-                            <li class="mb-1">
-                                <a href="#!" style="color: #4f4f4f;">Como Usar</a>
-                            </li>
-                            <li class="mb-1">
-                                <a href="#!" style="color: #4f4f4f;">Ayuda</a>
-                            </li>
-                            <li>
-                                <a href="#!" style="color: #4f4f4f;">Contacto</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <h5 class="mb-1" style="letter-spacing: 2px; color: #818963;">Atencion al Cliente</h5>
-                        <table class="table" style="color: #4f4f4f; border-color: #666;">
-                            <tbody>
-                                <tr>
-                                    <td>Lun - Vier:</td>
-                                    <td>8am - 9pm</td>
-                                </tr>
-                                <tr>
-                                    <td>Sab:</td>
-                                    <td>10am - 12am</td>
-                                </tr>
-                                <tr>
-                                    <td>Dom:</td>
-                                    <td>Cerrado </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-                © 2024 Copyright:
-                <a class="text-dark" href="">AmbienteWeb.com</a>
-            </div>
-            <!-- Copyright -->
-        </footer>
-
-    </div>
-
-
-    <script src="js/bootstrap.bundle.min.js"></script>
-</body>
-
-</html>
+<?php include '../core/footer.php'; ?>

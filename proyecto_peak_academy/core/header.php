@@ -42,10 +42,10 @@
                         Más Acciones
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Reportes</a></li>
-                        <li><a class="dropdown-item" href="#">Matricular</a></li>
-                        <li><a class="dropdown-item" href="#">Eventos</a></li>
-                        <li><a class="dropdown-item" href="#">Control de Activos</a></li>
+                        <li><a class="dropdown-item" href="../views/peakReportes.php">Reportes</a></li>
+                        <li><a class="dropdown-item" href="../views/peakMatricula.php">Matricular</a></li>
+                        <li><a class="dropdown-item" href="../views/peakActividades.php">Eventos</a></li>
+                        <li><a class="dropdown-item" href="../views/peakReportes.php">Control de Activos</a></li>
                     </ul>
                 </div>
             </div>

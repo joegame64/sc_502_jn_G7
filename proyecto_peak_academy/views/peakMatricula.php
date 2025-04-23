@@ -59,6 +59,6 @@
             <button type="submit" class="btn-enviar">Enviar Matrícula</button>
         </form>
     </div>
-    
+    <br>
     <!--footer de la pagina -->
     <?php include '../core/footer.php'; ?>
