@@ -15,7 +15,7 @@
         <div class="container-fluid">
             <!-- Logo -->
             <a class="logo" href="../index.php">
-                <img src="../imagenes/peaklogoo.png" alt="Peak Academy Logo" width="150" height="75">
+                <img src="imagenes/peaklogoo.png" alt="Peak Academy Logo" width="150" height="75">
             </a>
 
             <!-- Menú de navegación -->
