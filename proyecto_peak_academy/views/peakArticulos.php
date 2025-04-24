@@ -3,6 +3,8 @@
 <!-- Contenedor Principal -->
 <div class="container mt-5">
     <!-- Descripción de la página -->
+  
+    <center><h5 class="anuncio">Busqueda de Inforamación</h5>
     <div class="text-center mb-5">
         <p>En esta página podrás encontrar artículos educativos sobre diversos temas como tecnología, ciencia, historia, educación y más, obtenidos de Wikipedia. Utiliza el campo de búsqueda para encontrar artículos relacionados con cualquier área de tu interés.</p>
     </div>

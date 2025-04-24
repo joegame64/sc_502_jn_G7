@@ -43,7 +43,7 @@ if (!isset($_SESSION['usuario'])) {
                         <a class="nav-link" href="../views/peakPracticas.php">Prácticas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../views/peakNotas.php">Notas</a>
+                        <a class="nav-link" href="../views/peakReportes.php">Reportes</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../views/peakArticulos.php">Recursos Educativos</a>
@@ -59,7 +59,6 @@ if (!isset($_SESSION['usuario'])) {
                         Más Acciones
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="../views/peakReportes.php">Reportes</a></li>
                         <li><a class="dropdown-item" href="../views/peakMatricula.php">Matricular</a></li>
                         <li><a class="dropdown-item" href="../views/peakActividades.php">Eventos</a></li>
                         <li><a class="dropdown-item" href="../views/peakActivos.php">Control de Activos</a></li>

@@ -2,7 +2,11 @@
 <?php include '../includes/helpers.php'; ?>
 
 <!-- Pequeño anuncio -->
-<h5 class="anuncio">Tus cursos</h5>
+<br>
+<center><h5 class="anuncio">Tus cursos</h5>
+<br>
+<p class="anuncio text-center mt-4">Escoge un curso para ver el reporte de estudiantes matriculados</p></center>
+<hr>
 <hr>
 
 <?php
@@ -15,7 +19,7 @@ $result = $conn->query($sql);
 
 // Verificar si se encontraron resultados
 if ($result && $result->num_rows > 0) {
-    echo '<p class="anuncio" style="margin-top: 25px;">Escoge un curso para Modificar las Notas</p>';
+ 
     echo '<div class="container-custom"><div class="row-custom">';
 
     // Iterar sobre los resultados y generar las tarjetas

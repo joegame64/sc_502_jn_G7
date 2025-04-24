@@ -1,11 +1,14 @@
 <?php include '../core/header.php'; ?>
 
 <!-- Tabla de control de activos -->
+ <br>
+ <center>
 <h5 class="anuncio">Control de Activos</h5>
 <hr>
 
 <!-- Botón para agregar un nuevo activo -->
 <button class="btn btn-success" id="btn-agregar">Agregar Nuevo Activo</button>
+</center>
 
 <?php
 // Incluir la conexión a la base de datos

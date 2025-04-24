@@ -55,3 +55,7 @@ INSERT INTO activos (nombre, cantidad) VALUES
 ('Router WiFi', 3),
 ('Monitor 24 pulgadas', 4),
 ('parlantes', 7);
+
+ALTER TABLE estudiantes
+ADD COLUMN curso_id INT,
+ADD CONSTRAINT fk_curso_id FOREIGN KEY (curso_id) REFERENCES cursos(id);

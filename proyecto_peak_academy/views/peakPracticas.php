@@ -1,65 +1,86 @@
 <?php include '../core/header.php'; ?>
 
-<!--Pequeño anuncio -->
-<h5 class="anuncio">Prácticas para los estudiantes</h5>
-<hr>
-
-<!--Prácticas-->
 <div class="container">
-    <h2>Gestión de Prácticas</h2>
-    <form id="formPractica">
-        <div class="form-group">
-            <label for="titulo">Título de la práctica</label>
-            <input type="text" id="titulo" class="form-control" required>
-        </div>
+    <h5 class="anuncio text-center">Prácticas de Estudiantes</h5>
 
+    <!-- Formulario de agregar nueva práctica -->
+    <h5 class="anuncio mt-5 text-center">Agregar Nueva Práctica</h5>
+    <form id="form-agregar-practica">
         <div class="form-group">
-            <label for="materia">Materia</label>
-            <select id="materia" class="form-control">
-                <option value="">Selecciona una materia</option>
-                <option value="programacion_basica">Programación Básica</option>
-                <option value="redes">Redes 1</option>
-                <option value="ambiente_web">Ambiente Web</option>
-                <option value="diseno">Diseño Gráfico</option>
-                <option value="estructura_datos">Estructura de Datos</option>
-                <option value="testing">Testing</option>
-                <option value="so">Sistemas Operativos</option>
-            </select>
+            <label for="titulo">Título</label>
+            <input type="text" class="form-control" id="titulo" required>
         </div>
-
-        <div class="form-group">
-            <label for="duracion">Duración</label>
-            <select id="duracion" class="form-control">
-                <option value="">Selecciona una duración</option>
-                <option value="15min">15 Min</option>
-                <option value="30min">30 Min</option>
-                <option value="1h">1 Hora</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="modalidad">Modalidad</label>
-            <select id="modalidad" class="form-control">
-                <option value="">Selecciona una modalidad</option>
-                <option value="individual">Individual</option>
-                <option value="grupal">Grupal</option>
-                <option value="parejas">Parejas</option>
-            </select>
-        </div>
-
         <div class="form-group">
             <label for="descripcion">Descripción</label>
-            <textarea id="descripcion" class="form-control" required></textarea>
+            <textarea class="form-control" id="descripcion" required></textarea>
         </div>
-
-        <button type="submit" class="btn-enviar">Agregar Práctica</button>
+        <div class="form-group">
+            <label for="curso_id">Curso</label>
+            <select class="form-control" id="curso_id" required>
+                <?php
+                include('../includes/conexion.php');
+                $sql = "SELECT * FROM cursos";
+                $result = $conn->query($sql);
+                while ($row = $result->fetch_assoc()) {
+                    echo "<option value='" . $row['id'] . "'>" . $row['nombre'] . "</option>";
+                }
+                ?>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="fecha">Fecha</label>
+            <input type="date" class="form-control" id="fecha" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Agregar</button>
     </form>
 
-    <div class="practicas">
-        <h3>Prácticas Disponibles</h3>
-        <div id="listaPracticas"></div>
-    </div>
+    <hr>
+
+    <h5 class="anuncio">Lista de Prácticas</h5>
+
+    <?php
+    include('../includes/conexion.php');
+    $sql = "SELECT * FROM practicas";
+    $result = $conn->query($sql);
+
+    if ($result && $result->num_rows > 0) {
+        echo '<table class="table table-bordered mt-3">';
+        echo '<thead>
+                <tr>
+                    <th>#</th>
+                    <th>Título</th>
+                    <th>Descripción</th>
+                    <th>Curso</th>
+                    <th>Fecha</th>
+                    <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>';
+        while ($row = $result->fetch_assoc()) {
+            echo '<tr>
+                    <td>' . $row['id'] . '</td>
+                    <td>' . $row['titulo'] . '</td>
+                    <td>' . $row['descripcion'] . '</td>
+                    <td>' . $row['curso_id'] . '</td>
+                    <td>' . $row['fecha'] . '</td>
+                    <td>
+                        <button class="btn btn-warning btn-sm btn-editar" 
+                            data-id="' . $row['id'] . '">Editar</button>
+                        <button class="btn btn-danger btn-sm btn-eliminar" 
+                            data-id="' . $row['id'] . '">Eliminar</button>
+                    </td>
+                </tr>';
+        }
+        echo '</tbody></table>';
+    } else {
+        echo '<p>No hay prácticas disponibles.</p>';
+    }
+    ?>
+
 </div>
 
-<!-- Footer de la página -->
 <?php include '../core/footer.php'; ?>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../js/acciones_practicas.js"></script>

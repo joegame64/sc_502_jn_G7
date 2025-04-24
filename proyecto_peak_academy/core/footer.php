@@ -67,7 +67,7 @@
             </div>
         </div>
         <div class="text-center p-3 footer-bottom">
-            © 2024 Copyright:
+            © 2025 Copyright:
             <a class="footer-link" href="">AmbienteWeb.com</a>
         </div>
     </footer>
