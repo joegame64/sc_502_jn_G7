@@ -34,6 +34,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="../views/peakNotas.php">Notas</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../views/peakArticulos.php">Recursos Educativos</a>
+                    </li>
                 </ul>
 
                 <!-- Dropdown de acciones -->
@@ -73,3 +76,5 @@
             </button>
         </div>
     </div>
+    
+    <hr>
