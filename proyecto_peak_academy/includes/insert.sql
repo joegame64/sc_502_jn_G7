@@ -39,3 +39,19 @@ VALUES ('Editor de Contenido', 'editor1', '$2y$10$Vsm8g2vGoGJgbpnhX1Go5eHV9HbGZ7
 -- Usuario estudiante
 INSERT INTO usuarios (nombre, usuario, contrasena, rol, activo)
 VALUES ('Estudiante Ejemplo', 'estudiante1', '$2y$10$Vsm8g2vGoGJgbpnhX1Go5eHV9HbGZ7AzG2Ex1cVwWzqdrdV7FeZEO', 'estudiante', 1);
+
+
+CREATE TABLE activos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    cantidad INT NOT NULL
+);
+
+INSERT INTO activos (nombre, cantidad) VALUES 
+('Laptop Dell', 5),
+('Proyector Epson', 2),
+('Mouse inalámbrico', 20),
+('Teclado mecánico', 10),
+('Router WiFi', 3),
+('Monitor 24 pulgadas', 4),
+('parlantes', 7);
