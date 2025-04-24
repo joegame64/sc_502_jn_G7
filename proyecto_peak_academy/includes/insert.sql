@@ -16,3 +16,26 @@ VALUES
 ('sofia.ramirez@academia.com', 'V-56789012', 'Sofía', 'Ramírez', 20, 'Biología', 'Sede Central', 91.50, 85.00, 93.00, 1),
 ('josephina.diaz@academia.com', 'V-67890123', 'Josephina', 'Díaz', 22, 'Psicología', 'Sede Sur', 89.00, 84.00, 86.50, 1),
 ('luis.morales@academia.com', 'V-78901234', 'Luis', 'Morales', 24, 'Física', 'Sede Norte', 78.50, 92.00, 80.00, 1);
+
+
+CREATE TABLE usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    usuario VARCHAR(50) NOT NULL UNIQUE,
+    contrasena VARCHAR(255) NOT NULL,
+    rol ENUM('admin', 'editor', 'estudiante') DEFAULT 'estudiante',
+    activo TINYINT(1) DEFAULT 1
+);
+
+--contraseña para todos 123456
+-- Usuario administrador
+INSERT INTO usuarios (nombre, usuario, contrasena, rol, activo)
+VALUES ('Administrador General', 'admin', '$2y$10$Vsm8g2vGoGJgbpnhX1Go5eHV9HbGZ7AzG2Ex1cVwWzqdrdV7FeZEO', 'admin', 1);
+
+-- Usuario editor
+INSERT INTO usuarios (nombre, usuario, contrasena, rol, activo)
+VALUES ('Editor de Contenido', 'editor1', '$2y$10$Vsm8g2vGoGJgbpnhX1Go5eHV9HbGZ7AzG2Ex1cVwWzqdrdV7FeZEO', 'editor', 1);
+
+-- Usuario estudiante
+INSERT INTO usuarios (nombre, usuario, contrasena, rol, activo)
+VALUES ('Estudiante Ejemplo', 'estudiante1', '$2y$10$Vsm8g2vGoGJgbpnhX1Go5eHV9HbGZ7AzG2Ex1cVwWzqdrdV7FeZEO', 'estudiante', 1);
