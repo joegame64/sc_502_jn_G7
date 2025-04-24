@@ -43,16 +43,17 @@ if ($result && $result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         echo '<tr>
                 <th scope="row">' . $row['id'] . '</th>
-                <td>' . $row['correo_estudiantil'] . '</td>
-                <td>' . $row['cedula'] . '</td>
-                <td>' . $row['nombre'] . '</td>
-                <td>' . $row['apellido'] . '</td>
-                <td>' . $row['edad'] . '</td>
-                <td>' . $row['carrera'] . '</td>
-                <td>' . $row['sede'] . '</td> 
+                <td class="correo">' . $row['correo_estudiantil'] . '</td>
+                <td class="cedula">' . $row['cedula'] . '</td>
+                <td class="nombre">' . $row['nombre'] . '</td>
+                <td class="apellido">' . $row['apellido'] . '</td>
+                <td class="edad">' . $row['edad'] . '</td>
+                <td class="carrera">' . $row['carrera'] . '</td>
+                <td class="sede">' . $row['sede'] . '</td> 
                 <td>
-                    <a href="editar.php?id=' . $row['id'] . '" class="btn btn-warning btn-sm">Editar</a>
-                    <a href="eliminar.php?id=' . $row['id'] . '" class="btn btn-danger btn-sm">Eliminar</a>
+                    <button class="btn btn-warning btn-sm btn-editar" data-id="' . $row['id'] . '">Editar</button>
+                    <button class="btn btn-danger btn-sm btn-eliminar" data-id="' . $row['id'] . '">Eliminar</button>
+                    
                 </td>
               </tr>';
     }
@@ -66,5 +67,16 @@ if ($result && $result->num_rows > 0) {
 $conn->close();
 ?>
 
+<!-- Incluir jQuery antes del script -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Incluir SweetAlert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<!-- Incluir el archivo de acciones -->
+<script src="../js/acciones_estudiante.js"></script>
+
 <!-- Footer de la página -->
 <?php include '../core/footer.php'; ?>
+
+
