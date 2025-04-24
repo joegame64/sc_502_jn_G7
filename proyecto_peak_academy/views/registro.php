@@ -1,17 +1,10 @@
-<?php 
-session_start();
-if (isset($_SESSION['usuario'])) {
-    header('Location: ../views/index.php'); // Redirige si ya ha iniciado sesión
-    exit();
-}
-?>
 
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Registro | Peak Academy</title>
-    <link rel="stylesheet" href="css/login.css"> <!-- Usa el mismo CSS del login -->
+    <link rel="stylesheet" href="../css/login.css"> <!-- Usa el mismo CSS del login -->
 </head>
 <body>
     <div class="login-container">

@@ -48,6 +48,9 @@ if (!isset($_SESSION['usuario'])) {
                     <li class="nav-item">
                         <a class="nav-link" href="../views/peakArticulos.php">Recursos Educativos</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../views/registro.php">Crear Usuario</a>
+                    </li>
                 </ul>
 
                 <!-- Dropdown de acciones -->
