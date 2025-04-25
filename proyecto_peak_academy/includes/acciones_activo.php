@@ -34,9 +34,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->bind_param("ssi", $nombre, $cantidad, $id);
 
         if ($stmt->execute()) {
-            echo "success";
+            echo "Activo actualizado correctamente";
         } else {
-            echo "error";
+            echo "Error al actualizar activo";
         }
 
         $stmt->close();
@@ -51,9 +51,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->bind_param("i", $id);
 
         if ($stmt->execute()) {
-            echo "success";
+            echo "Activo eliminado correctamente";
         } else {
-            echo "error";
+            echo "Error al eliminar activo";
         }
 
         $stmt->close();

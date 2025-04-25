@@ -69,6 +69,7 @@ $(document).ready(function() {
                     url: '../includes/acciones_activo.php',
                     type: 'POST',
                     data: {
+                        action: 'editar', // Agregar acción de edición
                         id: id,
                         nombre: result.value.nombre,
                         cantidad: result.value.cantidad
@@ -101,7 +102,10 @@ $(document).ready(function() {
                 $.ajax({
                     url: '../includes/acciones_activo.php',
                     type: 'POST',
-                    data: { id: id },
+                    data: {
+                        action: 'eliminar', // Agregar acción de eliminación
+                        id: id
+                    },
                     success: function(response) {
                         Swal.fire('¡Eliminado!', 'El activo ha sido eliminado.', 'success')
                             .then(() => location.reload()); // Recargar después de mostrar el mensaje
@@ -114,4 +118,3 @@ $(document).ready(function() {
         });
     });
 });
-

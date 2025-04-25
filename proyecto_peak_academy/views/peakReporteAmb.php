@@ -38,6 +38,7 @@ if ($result && $result->num_rows > 0) {
                         <th scope="col">Edad</th>
                         <th scope="col">Carrera</th>
                         <th scope="col">Sede</th> 
+                         <th scope="col">Estado</th> 
                         <th scope="col">Acciones</th>
                     </tr>
                 </thead>
@@ -54,10 +55,11 @@ if ($result && $result->num_rows > 0) {
                 <td class="edad">' . $row['edad'] . '</td>
                 <td class="carrera">' . $row['carrera'] . '</td>
                 <td class="sede">' . $row['sede'] . '</td> 
+                <td class="sede">' . $row['activo'] . '</td> 
                 <td>
                     <button class="btn btn-warning btn-sm btn-editar" data-id="' . $row['id'] . '">Editar</button>
-                    <button class="btn btn-danger btn-sm btn-eliminar" data-id="' . $row['id'] . '">Eliminar</button>
-                    
+                    <button class="btn btn-danger btn-sm btn-eliminar" data-id="' . $row['id'] . '">Desactivar</button>
+                    <button class="btn btn-success btn-sm btn-activar" data-id="' . $row['id'] . '">Activar</button> 
                 </td>
               </tr>';
     }
@@ -137,7 +139,7 @@ $conn->close();
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <!-- Incluir el archivo de acciones -->
-<script src="../js/acciones_estudiante.js"></script>
+<script src="../js/acciones_reporte.js"></script>
 
 <!-- Footer de la página -->
 <?php include '../core/footer.php'; ?>

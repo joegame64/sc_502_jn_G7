@@ -68,8 +68,12 @@ if (!isset($_SESSION['usuario'])) {
                     </ul>
                 </div>
 
-                <!-- Botón cerrar sesión -->
-                <a href="../includes/logout.php" class="btn btn-outline-danger">Cerrar sesión</a>
+           <!-- Botón cerrar sesión y usuario logueado -->
+<div class="d-flex align-items-center">
+    <a href="../includes/logout.php" class="btn btn-outline-danger me-3">Cerrar  / Acitvo: <strong><?php echo htmlspecialchars($_SESSION['usuario']); ?></strong></a>
+
+</div>
+
             </div>
         </div>
     </nav>
