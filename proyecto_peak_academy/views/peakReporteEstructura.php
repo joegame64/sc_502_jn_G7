@@ -1,15 +1,17 @@
 <?php include '../core/header.php'; ?>
 
-<!-- Tabla de info general -->  
- 
-<center>
-<div class="top-right">
-    <p class="materia">Ambiente web</p>
-    <p class="horario">L 6-9 PM</p>
-    <p class="sede">San Pedro</p>
-</div>
+    <!--contenido de la pagina -->
 
-<!-- Tabla de estudiantes -->
+    <!--Tabla de info general -->  
+    
+    <center>
+    <div class="top-right">
+        <p class="materia">Estructura</p>
+        <p class="horario">L 8-11 AM</p>
+        <p class="sede">Heredia</p>
+    </div>
+   
+   <!-- Tabla de estudiantes -->
 <h5 class="anuncio">Estudiantes</h5>
 
 </center>

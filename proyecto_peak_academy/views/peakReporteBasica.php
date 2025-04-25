@@ -2,132 +2,146 @@
 
     <!--contenido de la pagina -->
 
-    <!--Tabla de info general -->    
+    <!--Tabla de info general -->  
+    
+    <center>
     <div class="top-right">
         <p class="materia">Programacion Basica</p>
         <p class="horario">L 8-11 AM</p>
         <p class="sede">Heredia</p>
     </div>
    
-    <!--Tabla de notas -->
-    <h5 class="anuncio">Estudiantes</h5>
+   <!-- Tabla de estudiantes -->
+<h5 class="anuncio">Estudiantes</h5>
 
-    <hr>
+</center>
+<hr>
+
+<?php
+// Incluir la conexión a la base de datos
+include('../includes/conexion.php');
+
+// Consultar los estudiantes
+$sql = "SELECT * FROM estudiantes";
+$result = $conn->query($sql);
+
+// Verificar si se encontraron resultados
+if ($result && $result->num_rows > 0) {
+    // Mostrar los estudiantes en la tabla
+    echo '<div class="table-container">
+            <table class="table table-dark table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Correo Estudiantil</th>
+                        <th scope="col">Cédula</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Edad</th>
+                        <th scope="col">Carrera</th>
+                        <th scope="col">Sede</th> 
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>';
+
+    // Iterar sobre los resultados y generar las filas
+    while ($row = $result->fetch_assoc()) {
+        echo '<tr>
+                <th scope="row">' . $row['id'] . '</th>
+                <td class="correo">' . $row['correo_estudiantil'] . '</td>
+                <td class="cedula">' . $row['cedula'] . '</td>
+                <td class="nombre">' . $row['nombre'] . '</td>
+                <td class="apellido">' . $row['apellido'] . '</td>
+                <td class="edad">' . $row['edad'] . '</td>
+                <td class="carrera">' . $row['carrera'] . '</td>
+                <td class="sede">' . $row['sede'] . '</td> 
+                <td>
+                    <button class="btn btn-warning btn-sm btn-editar" data-id="' . $row['id'] . '">Editar</button>
+                    <button class="btn btn-danger btn-sm btn-eliminar" data-id="' . $row['id'] . '">Eliminar</button>
+                    
+                </td>
+              </tr>';
+    }
+
+    echo '</tbody></table></div>';
+} else {
+    echo "<p>No se encontraron estudiantes.</p>";
+}
+
+// Cerrar la conexión
+$conn->close();
+?>
 
 
-    <!--Tabla de notas -->
-    <div class="table-container">
-        <table class="table table-dark table-striped">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Correo Estudiantil</th>
-                    <th scope="col">Cédula</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Apellido</th>
-                    <th scope="col">Edad</th>
-                    <th scope="col">Carrera</th>
-                    <th scope="col">Lugar de Residencia</th>
-                    <th scope="col">Tareas</th>
-                    <th scope="col">Examen</th>
-                    <th scope="col">Proyecto</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><th scope="row">1</th><td>estudiante01@ufide.ac.cr</td><td>12345001</td><td>María</td><td>González</td><td>19</td><td>Programación Básica</td><td>San José</td><td>-</td><td>-</td><td>-</td></tr>
-                <tr><th scope="row">2</th><td>estudiante02@ufide.ac.cr</td><td>23456002</td><td>Carlos</td><td>Rodríguez</td><td>21</td><td>Programación Básica</td><td>Alajuela</td><td>-</td><td>-</td><td>-</td></tr>
-                <tr><th scope="row">3</th><td>estudiante03@ufide.ac.cr</td><td>34567003</td><td>Ana</td><td>Fernández</td><td>20</td><td>Programación Básica</td><td>Heredia</td><td>-</td><td>-</td><td>-</td></tr>
-                <tr><th scope="row">4</th><td>estudiante04@ufide.ac.cr</td><td>45678004</td><td>Juan</td><td>Pérez</td><td>22</td><td>Programación Básica</td><td>Cartago</td><td>-</td><td>-</td><td>-</td></tr>
-                <tr><th scope="row">5</th><td>estudiante05@ufide.ac.cr</td><td>56789005</td><td>Laura</td><td>Hernández</td><td>21</td><td>Programación Básica</td><td>Limón</td><td>-</td><td>-</td><td>-</td></tr>
-                <tr><th scope="row">6</th><td>estudiante06@ufide.ac.cr</td><td>67890006</td><td>Diego</td><td>López</td><td>23</td><td>Programación Básica</td><td>Puntarenas</td><td>-</td><td>-</td><td>-</td></tr>
-                <tr><th scope="row">7</th><td>estudiante07@ufide.ac.cr</td><td>78901007</td><td>Sofía</td><td>Martínez</td><td>20</td><td>Programación Básica</td><td>Guanacaste</td><td>-</td><td>-</td><td>-</td></tr>
-                <tr><th scope="row">8</th><td>estudiante08@ufide.ac.cr</td><td>89012008</td><td>Miguel</td><td>Sánchez</td><td>22</td><td>Programación Básica</td><td>San José</td><td>-</td><td>-</td><td>-</td></tr>
-                <tr><th scope="row">9</th><td>estudiante09@ufide.ac.cr</td><td>90123009</td><td>Valentina</td><td>Ramírez</td><td>19</td><td>Programación Básica</td><td>Alajuela</td><td>-</td><td>-</td><td>-</td></tr>
-                <tr><th scope="row">10</th><td>estudiante10@ufide.ac.cr</td><td>01234010</td><td>José</td><td>Torres</td><td>21</td><td>Programación Básica</td><td>Heredia</td><td>-</td><td>-</td><td>-</td></tr>
-                <tr><th scope="row">11</th><td>estudiante11@ufide.ac.cr</td><td>12345011</td><td>Isabel</td><td>Flores</td><td>20</td><td>Programación Básica</td><td>Cartago</td><td>-</td><td>-</td><td>-</td></tr>
-                <tr><th scope="row">12</th><td>estudiante12@ufide.ac.cr</td><td>23456012</td><td>Daniel</td><td>Rojas</td><td>22</td><td>Programación Básica</td><td>Limón</td><td>-</td><td>-</td><td>-</td></tr>
-                <tr><th scope="row">13</th><td>estudiante13@ufide.ac.cr</td><td>34567013</td><td>Gabriela</td><td>Vargas</td><td>21</td><td>Programación Básica</td><td>Puntarenas</td><td>-</td><td>-</td><td>-</td></tr>
-                <tr><th scope="row">14</th><td>estudiante14@ufide.ac.cr</td><td>45678014</td><td>Alejandro</td><td>Mora</td><td>23</td><td>Programación Básica</td><td>Guanacaste</td><td>-</td><td>-</td><td>-</td></tr>
-                <tr><th scope="row">15</th><td>estudiante15@ufide.ac.cr</td><td>56789015</td><td>Camila</td><td>Jiménez</td><td>20</td><td>Programación Básica</td><td>San José</td><td>-</td><td>-</td><td>-</td></tr>
-                <tr><th scope="row">16</th><td>estudiante16@ufide.ac.cr</td><td>67890016</td><td>Francisco</td><td>Castro</td><td>22</td><td>Programación Básica</td><td>Alajuela</td><td>-</td><td>-</td><td>-</td></tr>
-                <tr><th scope="row">17</th><td>estudiante17@ufide.ac.cr</td><td>78901017</td><td>Victoria</td><td>Méndez</td><td>19</td><td>Programación Básica</td><td>Heredia</td><td>-</td><td>-</td><td>-</td></tr>
-                <tr><th scope="row">18</th><td>estudiante18@ufide.ac.cr</td><td>89012018</td><td>Emilio</td><td>Solís</td><td>21</td><td>Programación Básica</td><td>Cartago</td><td>-</td><td>-</td><td>-</td></tr>
-                <tr><th scope="row">19</th><td>estudiante19@ufide.ac.cr</td><td>90123019</td><td>Mariana</td><td>Araya</td><td>20</td><td>Programación Básica</td><td>Limón</td><td>-</td><td>-</td><td>-</td></tr>
-                <tr><th scope="row">20</th><td>estudiante20@ufide.ac.cr</td><td>01234020</td><td>Sebastián</td><td>Chaves</td><td>22</td><td>Programación Básica</td><td>Puntarenas</td><td>-</td><td>-</td><td>-</td></tr>
-                <tr><th scope="row">21</th><td>estudiante21@ufide.ac.cr</td><td>12345021</td><td>Lucía</td><td>Quesada</td><td>21</td><td>Programación Básica</td><td>Guanacaste</td><td>-</td><td>-</td><td>-</td></tr>
-                <tr><th scope="row">22</th><td>estudiante22@ufide.ac.cr</td><td>23456022</td><td>Nicolás</td><td>Zamora</td><td>23</td><td>Programación Básica</td><td>San José</td><td>-</td><td>-</td><td>-</td></tr>
-                <tr><th scope="row">23</th><td>estudiante23@ufide.ac.cr</td><td>34567023</td><td>Catalina</td><td>Arias</td><td>20</td><td>Programación Básica</td><td>Alajuela</td><td>-</td><td>-</td><td>-</td></tr>
-                <tr><th scope="row">24</th><td>estudiante24@ufide.ac.cr</td><td>45678024</td><td>Eduardo</td><td>Navarro</td><td>22</td><td>Programación Básica</td><td>Heredia</td><td>-</td><td>-</td><td>-</td></tr>
-                <tr><th scope="row">25</th><td>estudiante25@ufide.ac.cr</td><td>56789025</td><td>Regina</td><td>Madrigal</td><td>19</td><td>Programación Básica</td><td>Cartago</td><td>-</td><td>-</td><td>-</td></tr>
-                <tr><th scope="row">26</th><td>estudiante26@ufide.ac.cr</td><td>67890026</td><td>Martín</td><td>Espinoza</td><td>21</td><td>Programación Básica</td><td>Limón</td><td>-</td><td>-</td><td>-</td></tr>
-                <tr><th scope="row">27</th><td>estudiante27@ufide.ac.cr</td><td>78901027</td><td>Antonia</td><td>Calderón</td><td>20</td><td>Programación Básica</td><td>Puntarenas</td><td>-</td><td>-</td><td>-</td></tr>
-                <tr><th scope="row">28</th><td>estudiante28@ufide.ac.cr</td><td>89012028</td><td>Ricardo</td><td>Cordero</td><td>22</td><td>Programación Básica</td><td>Guanacaste</td><td>-</td><td>-</td><td>-</td></tr>
-                <tr><th scope="row">29</th><td>estudiante29@ufide.ac.cr</td><td>90123029</td><td>Fernanda</td><td>Bonilla</td><td>21</td><td>Programación Básica</td><td>San José</td><td>-</td><td>-</td><td>-</td></tr>
-                <tr><th scope="row">30</th><td>estudiante30@ufide.ac.cr</td><td>01234030</td><td>Pablo</td><td>Esquivel</td><td>23</td><td>Programación Básica</td><td>Alajuela</td><td>-</td><td>-</td><td>-</td></tr>
-                <tr><th scope="row">31</th><td>estudiante31@ufide.ac.cr</td><td>12345031</td><td>Rebeca</td><td>Alfaro</td><td>20</td><td>Programación Básica</td><td>Heredia</td><td>-</td><td>-</td><td>-</td></tr>
-                <tr><th scope="row">32</th><td>estudiante32@ufide.ac.cr</td><td>23456032</td><td>Leonardo</td><td>Brenes</td><td>22</td><td>Programación Básica</td><td>Cartago</td><td>-</td><td>-</td><td>-</td></tr>
-                <tr><th scope="row">33</th><td>estudiante33@ufide.ac.cr</td><td>34567033</td><td>Amanda</td><td>Delgado</td><td>19</td><td>Programación Básica</td><td>Limón</td><td>-</td><td>-</td><td>-</td></tr>
-                <tr><th scope="row">34</th><td>estudiante34@ufide.ac.cr</td><td>45678034</td><td>Esteban</td><td>Fonseca</td><td>21</td><td>Programación Básica</td><td>Puntarenas</td><td>-</td><td>-</td><td>-</td></tr>
-                <tr><th scope="row">35</th><td>estudiante35@ufide.ac.cr</td><td>56789035</td><td>Daniela</td><td>Gutiérrez</td><td>20</td><td>Programación Básica</td><td>Guanacaste</td><td>-</td><td>-</td><td>-</td></tr>
-                </tbody>
-        </table>
-    </div>
       <!--Formulario para editar tabla -->
-        <h5 class="anuncio" style="margin-top: 8vh;">Buscar Estudiante</h5>
+      <h5 class="anuncio" style="margin-top: 8vh;">Buscar Estudiante</h5>
 
-        <hr>
+<hr>
 
-        <form class="row g-3">
-            <div class="col-md-6">
-                <label for="inputid" class="form-label">Cedula</label>
-                <input type="id" class="form-control" id="inputid" placeholder="Cedula del Estudiante">
-                </div>
-            <div class="col-md-6">
-            <label for="inputname" class="form-label">Nombre Completo</label>
-            <input type="name" class="form-control" id="inputname" placeholder="Nombre del Estudiante">
-            </div>
-            <div class="col-md-2">
-                <label for="inputCorreo" class="form-label">Correo Estudiantil</label>
-                <input type="text" class="form-control" id="inputCorreo" placeholder="" >
-            </div>
-            <div class="col-md-2">
-                <label for="inputCarrera" class="form-label">Carrera</label>
-                <input type="text" class="form-control" id="inputCarrera" placeholder="" >
-            </div>
-            <div class="col-md-2">
-                <label for="inputResidencia" class="form-label">Lugar de Residencia</label>
-                <input type="text" class="form-control" id="inputResidencia" placeholder="" >
-            </div>
-            <div class="col-md-2">
-                <label for="inputProyecto" class="form-label">Observaciones</label>
-                <input type="text" class="form-control" id="inputProyecto" placeholder="Describa el Reporte" >
-            </div>
-            <div class="col-md-4">
-            <label for="inputState" class="form-label">Reporte</label>
-            <select id="inputState" class="form-select">
-                <option selected>Escoja...</option>
-                <option><p>Conducta</p></option>
-                <option><p>Ausencias</p></option>
-                <option><p>Notas</p></option>
-                <option><p>Cancelacion de Curso</p></option>
-            </select>
-            </div>
+<form class="row g-3">
+    <div class="col-md-6">
+        <label for="inputid" class="form-label">Cedula</label>
+        <input type="id" class="form-control" id="inputid" placeholder="Cedula del Estudiante">
+        </div>
+    <div class="col-md-6">
+    <label for="inputname" class="form-label">Nombre Completo</label>
+    <input type="name" class="form-control" id="inputname" placeholder="Nombre del Estudiante">
+    </div>
+    <div class="col-md-2">
+        <label for="inputCorreo" class="form-label">Correo Estudiantil</label>
+        <input type="text" class="form-control" id="inputCorreo" placeholder="" >
+    </div>
+    <div class="col-md-2">
+        <label for="inputCarrera" class="form-label">Carrera</label>
+        <input type="text" class="form-control" id="inputCarrera" placeholder="" >
+    </div>
+    <div class="col-md-2">
+        <label for="inputResidencia" class="form-label">Lugar de Residencia</label>
+        <input type="text" class="form-control" id="inputResidencia" placeholder="" >
+    </div>
+    <div class="col-md-2">
+        <label for="inputProyecto" class="form-label">Observaciones</label>
+        <input type="text" class="form-control" id="inputProyecto" placeholder="Describa el Reporte" >
+    </div>
+    <div class="col-md-4">
+    <label for="inputState" class="form-label">Reporte</label>
+    <select id="inputState" class="form-select">
+        <option selected>Escoja...</option>
+        <option><p>Conducta</p></option>
+        <option><p>Ausencias</p></option>
+        <option><p>Notas</p></option>
+        <option><p>Cancelacion de Curso</p></option>
+    </select>
+    </div>
 
-            <div class="col-12">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck">
-                <label class="form-check-label" for="gridCheck">
-                Enviar Reporte
-                </label>
-            </div>
-            </div>
-            <div class="col-12">
-            <button type="submit" class="btn btn-primary">Enviar Datos</button>
-            </div>
+    <div class="col-12">
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck">
+        <label class="form-check-label" for="gridCheck">
+        Enviar Reporte
+        </label>
+    </div>
+    </div>
+    <div class="col-12">
+    <button type="submit" class="btn btn-primary">Enviar Datos</button>
+    </div>
 
-          <hr>
+  <hr>
 
-        </form>
-    
-    <!--footer de la pagina -->
-    <?php include '../core/footer.php'; ?>
+</form>
+
+
+<!-- Incluir jQuery antes del script -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Incluir SweetAlert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<!-- Incluir el archivo de acciones -->
+<script src="../js/acciones_estudiante.js"></script>
+
+<!-- Footer de la página -->
+<?php include '../core/footer.php'; ?>
+
+

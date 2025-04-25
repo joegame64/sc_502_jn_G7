@@ -1,55 +1,65 @@
 <?php include '../core/header.php'; ?>
-<?php include '../includes/helpers.php'; ?>
+    
+<!--contenido de la pagina -->
 
-<!-- Pequeño anuncio -->
-<br>
-<center><h5 class="anuncio text-center">Reportes</h5>
-<br>
-<p class="anuncio text-center mt-4">Escoge un curso para ver el reporte de estudiantes matriculados</p></center>
-<hr>
+    <!--Pequeño anuncio -->
+    <center>
 
-<?php
-// Incluir la conexión a la base de datos
-include('../includes/conexion.php');
+    <h5 class="anuncio">Reportes</h5>
+    <hr>
 
-// Consultar los cursos
-$sql = "SELECT * FROM cursos";
-$result = $conn->query($sql);
-
-
-// Verificar si se encontraron resultados
-if ($result && $result->num_rows > 0) {
- 
-    echo '<div class="container-custom"><div class="row-custom row row-cols-1 row-cols-md-3 g-4">';
-   
-
-    // Iterar sobre los resultados y generar las tarjetas
-    while ($row = $result->fetch_assoc()) {
-        $nombreArchivo = limpiarNombreArchivo($row['nombre']); // Limpiar el nombre
-
-        echo '<div class="card">
+    <p class="anuncio" style="margin-top: 25px;">Escoje Un curso para dar el Reporte</p>
+    </center>
+    
+    <!--Cards de las notas -->
+    <div class="container-custom">
+        <div class="row-custom">
+            <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title text-center">' . htmlspecialchars($row['nombre']) . '</h5>
-                    <p class="card-text">' . htmlspecialchars($row['descripcion']) . '</p>
+                    <h5 class="card-title">Ambiente Web</h5>
+                    <p class="card-text">25 Estudiantes</p>
                     <hr>
-                    <p>' . (isset($row['horarios']) ? htmlspecialchars($row['horarios']) : 'Horario no especificado') . '</p>
+                    <p>Lunes 6-9 PM</p>
                     <hr>
-                    <p>' . (isset($row['ubicacion']) ? htmlspecialchars($row['ubicacion']) : 'Ubicación no especificada') . '</p>
-                    <div class="d-flex justify-content-center">
-                        <a href="../views/peak' . $nombreArchivo . '.php" class="btn btn-primary">Ir a Notas</a>
-                    </div>
+                    <p>San Pedro</p>
+                    <a href="../views/peakReporteAmb.php" class="btn btn-primary">Acceder</a>
                 </div>
-              </div>';
-    }
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Bases de Datos</h5>
+                    <p class="card-text">15 Estudiantes</p>
+                    <hr>
+                    <p>Martes 2-5 PM</p>
+                    <hr>
+                    <p>Virtual</p>
+                    <a href="../views/peakReporteBase.php" class="btn btn-primary">Acceder</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Estructura de Datos</h5>
+                    <p class="card-text">30 Estudiantes</p>
+                    <hr>
+                    <p>Jueves 6-9 PM</p>
+                    <hr>
+                    <p>Heredia</p>
+                    <a href="../views/peakReporteEstructura.php" class="btn btn-primary">Acceder</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Programacion Basica</h5>
+                    <p class="card-text">35 Estudiantes</p>
+                    <hr>
+                    <p>Lunes 8-11 AM</p>
+                    <hr>
+                    <p>Heredia</p>
+                    <a href="../views/peakReporteBasica.php" class="btn btn-primary">Acceder</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    echo '</div></div>';
-} else {
-    echo "<p class='anuncio text-center'>No se encontraron cursos.</p>";
-}
-
-// Cerrar la conexión
-$conn->close();
-?>
-
-<!-- Footer de la página -->
-<?php include '../core/footer.php'; ?>
+    <!--footer de la pagina -->
+    <?php include '../core/footer.php'; ?>
