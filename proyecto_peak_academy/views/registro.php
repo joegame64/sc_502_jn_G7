@@ -8,7 +8,11 @@
 </head>
 <body>
     <div class="login-container">
+
+    <button onclick="history.back()" class="btn btn-secondary">Volver</button>
+   
         <h2>Registro de Usuario</h2>
+       
         <form action="../includes/validar_registro.php" method="POST">
             <input type="text" name="nombre" placeholder="Nombre completo" required>
             <input type="text" name="usuario" placeholder="Nombre de usuario" required>
@@ -19,9 +23,12 @@
                 <option value="usuario">Usuario</option>
             </select>
             <button type="submit">Registrar</button>
+            
         </form>
+        
+
     </div>
-</body>
+  
 </html>
 
 

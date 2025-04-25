@@ -1,7 +1,7 @@
 <?php include '../core/header.php'; ?>
 
 <div class="container">
-    <h5 class="anuncio text-center">Registrar Estudiante</h5>
+    <h5 class="anuncio text-center">Matricular Estudiante</h5>
 
     <!-- Formulario para ingresar estudiante -->
     <form id="form-estudiante" method="POST">

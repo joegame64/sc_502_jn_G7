@@ -1,11 +1,10 @@
 <?php include '../core/header.php'; ?>
 
-<h5 class="anuncio">Prácticas para los estudiantes</h5>
 <hr>
 
 
 
-    <p class="anuncio" style="margin-top: 25px;">Actividades</p>
+    <center><p class="anuncio" style="margin-top: 25px;">Actividades</p></center>
     <!--Cards de las notas -->
     <div class="container-custom">
         <div class="row-custom">
